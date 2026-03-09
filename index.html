@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secret Page</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+color:white;
+}
+
+.container{
+background: rgba(0,0,0,0.6);
+padding:40px;
+border-radius:15px;
+width:90%;
+max-width:350px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+backdrop-filter: blur(10px);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input{
+padding:12px;
+width:80%;
+border:none;
+border-radius:8px;
+font-size:16px;
+outline:none;
+margin-top:10px;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+background:#ff4b7d;
+color:white;
+transition:0.3s;
+}
+
+button:hover{
+background:#ff1f5a;
+transform:scale(1.05);
+}
+
+#hint{
+margin-top:15px;
+color:#ffd700;
+font-style:italic;
+}
+
+#videoPage{
+display:none;
+text-align:center;
+width:100%;
+}
+
+video{
+width:90%;
+max-width:700px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+@media (max-width:500px){
+
+h2{
+font-size:20px;
+}
+
+.container{
+padding:30px 20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loginPage" class="container">
+
+<h2>Masukin Password</h2>
+
+<input type="password" id="password" placeholder="password disini">
+
+<br>
+
+<button onclick="checkPassword()">Masuk</button>
+
+<p>🖕🏻( •_• )🖕🏻</p>
+
+<p id="hint"></p>
+
+</div>
+
+<div id="videoPage">
+
+<h2>Happy Birthday Mbak naaa 🎉</h2>
+
+<video controls>
+<source src="video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<script>
+
+let attempts = 0;
+
+function checkPassword(){
+
+var password = document.getElementById("password").value;
+
+if(password === "230308"){
+
+document.getElementById("loginPage").style.display = "none";
+document.getElementById("videoPage").style.display = "block";
+
+}
+
+else{
+
+attempts++;
+
+if(attempts === 1){
+document.getElementById("hint").innerText = "Hint: hari ini";
+}
+
+else if(attempts === 2){
+document.getElementById("hint").innerText = "Hint: ultah kamu mbak naa";
+}
+
+else if(attempts === 3){
+document.getElementById("hint").innerText = "Hint: buka tasnya";
+}
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
